@@ -1,5 +1,6 @@
 FROM java:8
 ADD . /src
+ADD ./gradlew ./gradlew
 RUN ./gradlew build
 
 ADD build/libs/hellworld-springboot-0.1.0.jar app.jar
