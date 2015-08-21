@@ -1,8 +1,8 @@
 FROM java:8
 
 ADD /src /src
-ADD /src /build
-ADD /src /gradle
+ADD /build /build
+ADD /gradle /gradle
 ADD build.gradle build.gradle
 ADD ./gradlew ./gradlew
 RUN ./gradlew build
