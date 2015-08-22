@@ -22,7 +22,7 @@ apply plugin: 'docker'
 group = 'kennyg'
 
 jar {
-    baseName = 'hellworld-springboot'
+    baseName = 'helloworld-springboot'
     version =  '0.1.0'
 }
 
@@ -30,8 +30,7 @@ jar {
 task buildDocker(type: Docker, dependsOn: build) {
   push = true
   applicationName = jar.baseName
-  dockerfile = file('Dockerfile')
-  //dockerfile = file('src/main/docker/Dockerfile')
+  dockerfile = file('src/main/docker/Dockerfile')
   doFirst {
     copy {
       from jar
